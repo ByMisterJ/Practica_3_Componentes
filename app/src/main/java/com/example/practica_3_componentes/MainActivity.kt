@@ -12,10 +12,14 @@ class MainActivity : AppCompatActivity() {
 
         // Referencia al botón
         val button1 = findViewById<Button>(R.id.button1)
-
+        val button2 = findViewById<Button>(R.id.button2)
         // Al hacer clic, ir a la nueva Activity
         button1.setOnClickListener {
             val intent = Intent(this, NewPlayer::class.java)
+            startActivity(intent)
+        }
+        button2.setOnClickListener {
+            val intent = Intent(this, Preferences::class.java)
             startActivity(intent)
         }
     }

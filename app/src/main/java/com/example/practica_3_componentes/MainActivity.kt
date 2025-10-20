@@ -10,17 +10,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Referencia al botón
-        val button1 = findViewById<Button>(R.id.button1)
-        val button2 = findViewById<Button>(R.id.button2)
-        // Al hacer clic, ir a la nueva Activity
-        button1.setOnClickListener {
-            val intent = Intent(this, NewPlayer::class.java)
-            startActivity(intent)
-        }
-        button2.setOnClickListener {
-            val intent = Intent(this, Preferences::class.java)
-            startActivity(intent)
-        }
+        val jugador = findViewById(R.id.button1) as Button
+
+        jugador.setOnClickListener { lanzarNewPlayer() }
     }
+
+    fun lanzarNewPlayer(){
+            val i =Intent(this, NewPlayer::class.java)
+            startActivity(i)
+        }
 }
